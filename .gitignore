@@ -1,0 +1,5 @@
+# Ignore node_modules, Python envs, and built files
+node_modules/
+venv/
+__pycache__/
+*.pyc
