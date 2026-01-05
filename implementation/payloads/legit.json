@@ -1,0 +1,11 @@
+{
+  "smtp": {
+    "host": "mail-server.lab"
+  },
+  "headers": {
+    "From": "kali@kali-mail.lab",
+    "To": "enjo@mail-server.lab",
+    "Subject": "Legit test"
+  },
+  "body": "Ovo je legitiman LAB test mail."
+}
