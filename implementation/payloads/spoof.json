@@ -1,0 +1,11 @@
+{
+  "smtp": {
+    "host": "mail-server.lab"
+  },
+  "headers": {
+    "From": "alice@mail-server.lab",
+    "To": "bob@mail-server.lab",
+    "Subject": "HITNO: Reset lozinke"
+  },
+  "body": "Klikni na link za reset lozinke: http://evil.lab/reset"
+}

@@ -5,7 +5,7 @@
   "headers": {
     "From": "enjo@mail-server.lab",
     "To": "kali@kali-mail.lab",
-    "Subject": "Legit test"
+    "Subject": "Sigurnosno upozorenje"
   },
-  "body": "Ovo je legitiman LAB test mail."
+  "body": "Vaš račun je zaključan.\nPotvrdite identitet slanjem lozinke."
 }
