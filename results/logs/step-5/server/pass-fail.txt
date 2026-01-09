@@ -1,0 +1,12 @@
+za payload: legit.json
+
+grep opendmarc /var/log/mail.log
+
+2026-01-09T00:03:54.516639+01:00 mail-server opendmarc[1162]: 7A764A630E: SPF(mailfrom): mail-server.lab pass
+2026-01-09T00:03:54.517557+01:00 mail-server opendmarc[1162]: 7A764A630E: mail-server.lab pass
+
+grep opendkim /var/log/mail.log
+
+2026-01-09T09:10:23.567753+01:00 mail-server opendkim[14167]: 89615A63C6: no signing table match for 'kali@kali-mail.lab'
+2026-01-09T09:10:23.583413+01:00 mail-server opendkim[14167]: 89615A63C6: DKIM verification successful
+2026-01-09T09:10:23.584252+01:00 mail-server opendkim[14167]: 89615A63C6: s=default d=kali-mail.lab a=rsa-sha256 SSL 

@@ -13,10 +13,10 @@ Cilj projekta je detaljno razumjeti, implementirati i analizirati DMARC protokol
 ## **3. Struktura tima**
 | Uloga                               | Opis                                                              | Član tima   |
 | ----------------------------------- | ----------------------------------------------------------------- | ----------- |
-| **DMARC Implementation Lead**       | Vodi implementaciju DMARC, SPF i DKIM.                            | Ivan Horvat |
-| **Simulated Environment Lead**      | Postavlja i održava simulirano e-mail okruženje.                  | Pero Perić  |
-| **Attack and Reporting Lead**       | Dizajnira spoofing/phishing napade i upravlja DMARC izvještajima. | Goran Goranić |
-| **Analysis and Documentation Lead** | Analizira rezultate i izrađuje dokumentaciju.                     | Petra Novak |
+| **DMARC Implementation Lead**       | Vodi implementaciju DMARC, SPF i DKIM.                            | Filip Novak |
+| **Simulated Environment Lead**      | Postavlja i održava simulirano e-mail okruženje.                  | Marko Mencl  |
+| **Attack and Reporting Lead**       | Dizajnira spoofing/phishing napade i upravlja DMARC izvještajima. | Ennio David Komljenović |
+| **Analysis and Documentation Lead** | Analizira rezultate i izrađuje dokumentaciju.                     | Paula Zadravec |
 
 ## **4. Preduvjeti**
 - Osnovno znanje e-mail protokola i DNS-a.
