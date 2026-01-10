@@ -13,7 +13,7 @@
 - Sethuraman, S. C., Devi Priya, V. S., Reddi, T., Mulka Sai Tharun Reddy, R., i Khan, M. K. (2024). A comprehensive examination of email spoofing: Issues and prospects for email security. Computers & Security, 137, 103600. https://doi.org/10.1016/j.cose.2023.103600
 - WMD Hosting. (n.d.). Što je SPF zapis? WMD Hosting. https://wmd.hr/upute/%C5%A1to-je-spf-zapis
 
-## Setup
+## Setup (Mail servers)
 - https://www.linkedin.com/pulse/how-build-your-own-email-server-ubuntu-part-4-liviu-gelca-gda0e
 - https://askubuntu.com/questions/965343/enabling-and-disabling-network-card-through-commandline
 - https://serverfault.com/questions/1021262/whats-the-right-way-to-enter-dkim-string-into-bind-zone-file
@@ -24,6 +24,7 @@
 - https://www.server-world.info/en/note?os=CentOS_Stream_9&p=dns&f=10
 - https://dovecot.org/
 - https://www.thunderbird.net/en-US/
+
 
 
 
