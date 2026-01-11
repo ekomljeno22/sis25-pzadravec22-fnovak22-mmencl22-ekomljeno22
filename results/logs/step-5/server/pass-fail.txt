@@ -9,4 +9,20 @@ grep opendkim /var/log/mail.log
 
 2026-01-09T09:10:23.567753+01:00 mail-server opendkim[14167]: 89615A63C6: no signing table match for 'kali@kali-mail.lab'
 2026-01-09T09:10:23.583413+01:00 mail-server opendkim[14167]: 89615A63C6: DKIM verification successful
-2026-01-09T09:10:23.584252+01:00 mail-server opendkim[14167]: 89615A63C6: s=default d=kali-mail.lab a=rsa-sha256 SSL 
+2026-01-09T09:10:23.584252+01:00 mail-server opendkim[14167]: 89615A63C6: s=default d=kali-mail.lab a=rsa-sha256 SSL
+
+za payload: spoof.json
+
+grep opendmar c /var/log/mail.log
+
+2026-01-09T15:03:52.667838+01:00 mail-server opendmarc[1162]: 9B26EA648B: SPF(mailfrom): mail-server.lab pass
+2026-01-09T15:03:52.668240+01:00 mail-server opendmarc[1162]: 9B26EA648B: mail-server.lab pass
+
+grep opendkim /var/log/mail.log
+
+2026-01-09T15:03:52.658382+01:00 mail-server opendkim[14167]: 9B26EA648B: mail-server.lab [192.168.100.50] not internal
+2026-01-09T15:03:52.661083+01:00 mail-server opendkim[14167]: 9B26EA648B: not authenticated
+2026-01-09T15:03:52.662671+01:00 mail-server opendkim[14167]: 9B26EA648B: no signature data
+
+za payload: phish.json
+

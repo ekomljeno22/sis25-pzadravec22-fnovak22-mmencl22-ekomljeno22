@@ -1,0 +1,12 @@
+{
+  "smtp": {
+    "host": "kali-mail.lab",
+    "port": 25
+  },
+  "headers": {
+    "From": "test@example.com",
+    "To": "enjo@mail-server.lab",
+    "Subject": "Test Obfuscation"
+  },
+  "body": "Visit paypal[dot]com or contact support[at]gmail(dot)com. Beware of 1O0O lookalikes!"
+}

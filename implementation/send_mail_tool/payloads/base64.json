@@ -1,0 +1,12 @@
+{
+  "smtp": {
+    "host": "kali-mail.lab",
+    "port": 25
+  },
+  "headers": {
+    "From": "test@example.com",
+    "To": "enjo@mail-server.lab",
+    "Subject": "Test Base64"
+  },
+  "body": "Here is some encoded content: aHR0cHM6Ly9ldmlsLXBoaXNoaW5nLmxhYi9sb2dpbg== which decodes to a phishing link."
+}

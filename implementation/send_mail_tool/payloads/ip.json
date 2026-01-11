@@ -1,0 +1,12 @@
+{
+  "smtp": {
+    "host": "kali-mail.lab",
+    "port": 25
+  },
+  "headers": {
+    "From": "noreply@some-service.lab",
+    "To": "enjo@mail-server.lab",
+    "Subject": "Important update about your service"
+  },
+  "body": "Please update your information at: https://bit.ly/3xY7aKp\n\nOr visit: http://user:pass@10.0.0.99:8080/update\n\nThanks!"
+}

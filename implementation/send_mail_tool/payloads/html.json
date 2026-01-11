@@ -1,0 +1,16 @@
+{
+  "smtp": {
+    "host": "kali-mail.lab",
+    "port": 25
+  },
+  "headers": {
+    "From": "security@micr0soft-update.com",
+    "To": "enjo@mail-server.lab",
+    "Subject": "🚨 ACTION REQUIRED: Microsoft Security Update"
+  },
+  "extra_headers": {
+    "X-Priority": "1",
+    "X-MSMail-Priority": "High"
+  },
+  "body": "<html><body>\n<script>alert('Important update!');</script>\n\n<h1>MICROSOFT SECURITY ALERT</h1>\n\n<p>Dear Valued Customer,</p>\n\n<p>We have detected <b>MALWARE</b> on your system!</p>\n\n<p>URGENT ACTION REQUIRED:</p>\n<ol>\n<li>CLICK HERE to download security patch: http://micr0soft-update.com/patch.exe</li>\n<li>Enter your credentials to verify: http://user:pass@192.168.99.99/login</li>\n<li>Verify your identity with SSN: ***-**-****</li>\n</ol>\n\n<p>This offer expires in 24 hours!</p>\n\n<p style=\"color:transparent\">hidden tracking: user123456</p>\n\n<p>Microsoft Security Team</p>\n\n<p>P.S. Do not ignore! Your account will be terminated.</p>\n</body></html>"
+}

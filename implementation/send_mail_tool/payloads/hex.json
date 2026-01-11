@@ -1,0 +1,12 @@
+{
+  "smtp": {
+    "host": "kali-mail.lab",
+    "port": 25
+  },
+  "headers": {
+    "From": "test@example.com",
+    "To": "enjo@mail-server.lab",
+    "Subject": "Test Hex"
+  },
+  "body": "Click here: \\x68\\x74\\x74\\x70\\x73\\x3a\\x2f\\x2f\\x62\\x61\\x64\\x2e\\x6c\\x61\\x62 or visit %68%74%74%70%73%3a%2f%2f%70%68%69%73%68%2e%63%6f%6d"
+}
