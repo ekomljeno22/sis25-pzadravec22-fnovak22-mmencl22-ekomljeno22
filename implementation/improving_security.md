@@ -160,10 +160,22 @@ Sada bi Thunderbird trebao označiti spoofani mail sa oznakom Junk (mala ikona v
 
 ## Vlastiti Milter
 
+Ovo je **mail filter (milter)** koji:
+
+- presreće dolazne email poruke
+- analizira sadržaj i headere radi phishing znakova  
+  (sumnjive riječi, linkove, obfuscaciju, HTML/JS, SPF/DKIM/DMARC)
+- dodjeljuje bodove prema pronađenim indikatorima
+- određuje razinu rizika (LOW → CRITICAL)
+- dodaje phishing headere i predlaže akciju  
+  (PASS / FLAG / QUARANTINE / REJECT)
+
+**Svrha:** automatsko otkrivanje phishing emailova na mail serveru.
+
 `sudo apt install -y python3.12-venv libmilter-dev build-essential`
 
 
-U temrinalu:
+U terminalu:
 ```
 sudo mkdir -p /opt/phishing-milter
 cd /opt/phishing-milter
