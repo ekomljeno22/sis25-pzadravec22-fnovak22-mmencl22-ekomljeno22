@@ -44,6 +44,23 @@ Također, bob nije primio nikakav mail pa je odbijanje mailova uspješno.
 
 
 ## DMARC Forenzički reporti
+
+Prikazat će se rad forenzičkih izvještaja pomoću DMARCA. Oni se temelje na DMARC TXT zapisu gdje je definirana email adresa kojoj se šalju ti izvještaji.
+
+Primjer DNS TXT dmarc zapisa:
+```
+_dmarc.mail-server.lab. 604800	IN	TXT	"v=DMARC1; p=quarantine; rua=mailto:reports@mail-server.lab; ruf=mailto:reports@mail-server.lab; fo=1"
+```
+
+Ovdje je označeno `ruf=mailto:reports@mail-server.lab`, to je Reporting URI for Forensic reports i na nju se šalju DMARC izmeštaji na temelju pravila koje se nalazi u parametru `fo`.
+
+Moguća pravila parametra `fo`:
+- `fo=0`: Generira se DMARC izvješće o neuspjehu ako i SPF i DKIM ne daju usklađeni rezultat `pass` (zadano).
+- `fo=1`: Generira se DMARC izvješće o neuspjehu ako bilo SPF ili DKIM nema usklađeni rezultat `pass` (preporučeno).
+- `fo=d`: Generira se DKIM izvješće o neuspjehu ako je potpis pao provjeru, bez obzira na usklađenost.
+- `fo=s`: Generira se SPF izvješće o neuspjehu ako SPF provjera ne uspije, bez obzira na usklađenost.
+
+
 sudo nano /etc/opendmarc.conf
 FailureReports true
 sudo systemctl restart opendmarc
