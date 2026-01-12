@@ -3,6 +3,13 @@
 ## **1. Pregled projekta**
 Cilj projekta je detaljno razumjeti, implementirati i analizirati DMARC protokol. Studenti će simulirati organizacijsko okruženje, implementirati DMARC zajedno s SPF i DKIM, te procijeniti učinkovitost u smanjenju lažiranja (spoofing) i phishing napada.
 
+**Struktura datoteka**
+
+- [docs](https://github.com/ekomljeno22/sis25-pzadravec22-fnovak22-mmencl22-ekomljeno22/tree/main/docs) - plan, teorija, zaključak, reference
+- [implementation](https://github.com/ekomljeno22/sis25-pzadravec22-fnovak22-mmencl22-ekomljeno22/tree/main/implementation) - datoteke rezultate praktičnog dijela
+- [presentation](https://github.com/ekomljeno22/sis25-pzadravec22-fnovak22-mmencl22-ekomljeno22/tree/main/presentation) - poveznica na prezentaciju
+- [results](https://github.com/ekomljeno22/sis25-pzadravec22-fnovak22-mmencl22-ekomljeno22/tree/main/results) - neki screenshotovi i logovi
+
 ## **2. Ciljevi**
 - Razumjeti i implementirati DMARC te povezane protokole SPF i DKIM.
 - Simulirati okruženje za slanje i primanje e-pošte.
