@@ -1,12 +1,98 @@
 ## Demonstracija odbijanja poruke koja nije prošla DMARC (dmarc=fail)
 
-echo "Ovo je test za DMARC." | mail -s "DMARC test - FAIL REJECT" -r alice@mail-server.lab bob@mail-server.lab
-
-sudo nano /etc/opendmarc.conf
-
+**Ubuntu**:`sudo nano /etc/opendmarc.conf`:
+```
 RejectFailures true
+```
 
+Na kraju: `sudo systemctl restart opendmarc`
+
+
+**Ubuntu**: `sudo nano /etc/bind/db.mail-server.lab`:
+
+Treba serial povećati za 1 i promijeniti da je u dmarc TXT zapise `p=reject`, pa `sudo systemctl restart bind9`.
+
+
+Još je potrebno na Ubuntu obrisati DNS cache: `resolvectl flush-caches`.
+
+
+Provjera ako se DNS promijena pohranila:
+```
+dig _dmarc.mail-server.lab txt
+...
+;; ANSWER SECTION:
+_dmarc.mail-server.lab.	604800	IN	TXT	"v=DMARC1; p=quarantine; rua=mailto:reports@mail-server.lab; ruf=mailto:reports@mail-server.lab; fo=1"
+
+```
+
+
+
+Sada se može pokušati poslati spoofani mail:
+
+KALI: `echo "Ovo je test za DMARC." | mail -s "DMARC test - REJECT" -r alice@mail-server.lab bob@mail-server.lab`
+
+
+Sada se može vidjeti na logovima kod korisnika `alice`:
+
+```
+<bob@mail-server.lab>: host mail-server.lab[192.168.100.50] said: 550 5.7.1
+    rejected by DMARC policy for mail-server.lab (in reply to end of DATA
+    command)
+```
+
+Također, bob nije primio nikakav mail pa je odbijanje mailova uspješno.
+
+
+## DMARC Forenzički reporti
+sudo nano /etc/opendmarc.conf
+FailureReports true
 sudo systemctl restart opendmarc
+
+echo "Ovo je test za DMARC." | mail -s "DMARC test - REPORTS" -r alice@mail-server.lab bob@mail-server.lab
+
+
+Primjer reporta
+```
+--mail-server.lab:8922A300197
+Content-Type: text/plain
+
+This is an authentication failure report for an email message received from IP
+192.168.100.10 on Mon, 12 Jan 2026 18:02:37 +0000 (UTC).
+
+--mail-server.lab:8922A300197
+Content-Type: message/feedback-report
+
+Feedback-Type: auth-failure
+Version: 1
+User-Agent: OpenDMARC-Filter/1.4.2
+Auth-Failure: dmarc
+Authentication-Results: OpenDMARC; dmarc=fail header.from=mail-server.lab
+Original-Envelope-Id: 8922A300197
+Original-Mail-From: alice@mail-server.lab
+Source-IP: 192.168.100.10 ([192.168.100.10])
+Reported-Domain: mail-server.lab
+
+--mail-server.lab:8922A300197
+Content-Type: text/rfc822-headers
+
+Received-SPF: Softfail (mailfrom) identity=mailfrom; client-ip=192.168.100.10; helo=kali-mail.lab; envelope-from=alice@mail-server.lab; receiver=mail-server.lab 
+Received: by kali-mail.lab (Postfix, from userid 1000)
+	id BA2193000EA; Mon, 12 Jan 2026 13:02:36 -0500 (EST)
+Subject: DMARC test
+To: <bob@mail-server.lab>
+User-Agent: mail (GNU Mailutils 3.20)
+Date: Mon, 12 Jan 2026 13:02:36 -0500
+Message-Id: <20260112180236.BA2193000EA@kali-mail.lab>
+From: alice@mail-server.lab
+
+--mail-server.lab:8922A300197--
+```
+
+
+
+
+
+
 
 
 ## Dovecot server - filteri za dmarc=fail
