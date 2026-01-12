@@ -88,7 +88,7 @@ DMARC se najčešće uvodi postupno. Počinje se s politikom p=none, koja omogu�
 DMARC zapis se dodaje kao TXT zapis u DNS postavkama domene.
 Osnovni DMARC zapis izgleda ovako:
 ```
-**v=DMARC1; p=none; rua=mailto:vaš-email@domena.com**
+v=DMARC1; p=none; rua=mailto:vaš-email@domena.com
 ```
 * “v=” označava da je ovo DMARC zapis
 * “p=” označava DMARC pravilo → p=none znači da se za sada samo prikupljaju izvještaji, bez blokiranja poruka
@@ -169,3 +169,4 @@ Loshin, P. (2024). Email authentication: How SPF, DKIM and DMARC work together. 
 Sethuraman, S. C., Devi Priya, V. S., Reddi, T., Mulka Sai Tharun Reddy, R., i Khan, M. K. (2024). A comprehensive examination of email spoofing: Issues and prospects for email security. Computers & Security, 137, 103600. https://doi.org/10.1016/j.cose.2023.103600
 
 WMD Hosting. (n.d.). Što je SPF zapis? WMD Hosting. https://wmd.hr/upute/%C5%A1to-je-spf-zapis
+
