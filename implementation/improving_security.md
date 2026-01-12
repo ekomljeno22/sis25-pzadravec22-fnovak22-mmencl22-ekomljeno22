@@ -73,10 +73,13 @@ FailureReports true
 
 `sudo systemctl restart opendmarc`
 
+
+Sada se može poslati spoofani email.
+
 KALI: `echo "Ovo je test za DMARC." | mail -s "DMARC test - REPORTS" -r alice@mail-server.lab bob@mail-server.lab`
 
 
-Primjer reporta
+Primjer izvještaja koji se generirao:
 ```
 --mail-server.lab:8922A300197
 Content-Type: text/plain
