@@ -55,17 +55,25 @@ _dmarc.mail-server.lab. 604800	IN	TXT	"v=DMARC1; p=quarantine; rua=mailto:report
 Ovdje je označeno `ruf=mailto:reports@mail-server.lab`, to je Reporting URI for Forensic reports i na nju se šalju DMARC izmeštaji na temelju pravila koje se nalazi u parametru `fo`.
 
 Moguća pravila parametra `fo`:
-- `fo=0`: Generira se DMARC izvješće o neuspjehu ako i SPF i DKIM ne daju usklađeni rezultat `pass` (zadano).
-- `fo=1`: Generira se DMARC izvješće o neuspjehu ako bilo SPF ili DKIM nema usklađeni rezultat `pass` (preporučeno).
-- `fo=d`: Generira se DKIM izvješće o neuspjehu ako je potpis pao provjeru, bez obzira na usklađenost.
-- `fo=s`: Generira se SPF izvješće o neuspjehu ako SPF provjera ne uspije, bez obzira na usklađenost.
+- `fo=0`: Generira se DMARC izvještaj o neuspjehu ako i SPF i DKIM ne daju usklađeni rezultat `pass` (zadano).
+- `fo=1`: Generira se DMARC izvještaj o neuspjehu ako bilo SPF ili DKIM nema usklađeni rezultat `pass` (preporučeno).
+- `fo=d`: Generira se DKIM izvještaj o neuspjehu ako je potpis pao provjeru, bez obzira na usklađenost.
+- `fo=s`: Generira se SPF izvještaj o neuspjehu ako SPF provjera ne uspije, bez obzira na usklađenost.
 
 
-sudo nano /etc/opendmarc.conf
+Potrebno je konfiguritati opendmarc kako bi se uključilo slanje izvještaja.
+
+
+`sudo nano /etc/opendmarc.conf`:
+```
 FailureReports true
-sudo systemctl restart opendmarc
+````
 
-echo "Ovo je test za DMARC." | mail -s "DMARC test - REPORTS" -r alice@mail-server.lab bob@mail-server.lab
+
+
+`sudo systemctl restart opendmarc`
+
+KALI: `echo "Ovo je test za DMARC." | mail -s "DMARC test - REPORTS" -r alice@mail-server.lab bob@mail-server.lab`
 
 
 Primjer reporta
