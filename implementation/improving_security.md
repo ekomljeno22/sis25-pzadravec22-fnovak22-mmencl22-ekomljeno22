@@ -1,3 +1,14 @@
+## Demonstracija odbijanja poruke koja nije prošla DMARC (dmarc=fail)
+
+echo "Ovo je test za DMARC." | mail -s "DMARC test - FAIL REJECT" -r alice@mail-server.lab bob@mail-server.lab
+
+sudo nano /etc/opendmarc.conf
+
+RejectFailures true
+
+sudo systemctl restart opendmarc
+
+
 ## Dovecot server - filteri za dmarc=fail
 
 Ovaj dio se odnosi na opis kako da se u aplikaciji Thunderbird složi mail filter da automatski označi dolazne mailove kao Junk kada u sebi sadrže zapis `dmarc=fail`.
