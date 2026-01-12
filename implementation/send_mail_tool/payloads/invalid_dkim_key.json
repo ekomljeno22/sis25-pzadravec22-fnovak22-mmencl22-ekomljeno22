@@ -1,0 +1,26 @@
+{
+  "smtp": { "host": "kali-mail.lab", "port": 25 },
+
+  "envelope": {
+    "mail_from": "kali@kali-mail.lab",
+    "rcpt_to": ["ubuntu@mail-server.lab"]
+  },
+
+  "headers": {
+    "from": "kali@kali-mail.lab",
+    "to": "ubuntu@mail-server.lab",
+    "subject": "Invalid DKIM key"
+  },
+
+  "body": {
+    "text": "This message is signed with an invalid key"
+  },
+
+  "dkim": {
+    "enabled": true,
+    "domain": "kali-mail.lab",
+    "selector": "default",
+    "private_key": "keys/example_invalid.pem",
+    "break_signature": false
+  }
+}
