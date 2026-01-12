@@ -1,9 +1,5 @@
 # Implementacija DMARC-a (Domain-Based Message Authentication, Reporting & Conformance)
 
-## **0. Struktura datoteka**
-
-[TODO]
-
 ## **1. Pregled projekta**
 Cilj projekta je detaljno razumjeti, implementirati i analizirati DMARC protokol. Studenti će simulirati organizacijsko okruženje, implementirati DMARC zajedno s SPF i DKIM, te procijeniti učinkovitost u smanjenju lažiranja (spoofing) i phishing napada.
 
