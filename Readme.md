@@ -1,5 +1,11 @@
 # Implementacija DMARC-a (Domain-Based Message Authentication, Reporting & Conformance)
 
+**Članovi tima**
+- Ennio David Komljenović
+- Marko Mencl
+- Filip Novak
+- Paula Zadravec
+
 ## **1. Pregled projekta**
 Cilj projekta je detaljno razumjeti, implementirati i analizirati DMARC protokol. Studenti će simulirati organizacijsko okruženje, implementirati DMARC zajedno s SPF i DKIM, te procijeniti učinkovitost u smanjenju lažiranja (spoofing) i phishing napada.
 
@@ -17,33 +23,32 @@ Cilj projekta je detaljno razumjeti, implementirati i analizirati DMARC protokol
 - Prikupiti i interpretirati DMARC izvještaje.
 - Dokumentirati i prezentirati rezultate.
 
-## **3. Struktura tima**
-| Uloga                               | Opis                                                              | Član tima   |
-| ----------------------------------- | ----------------------------------------------------------------- | ----------- |
-| **DMARC Implementation Lead**       | Vodi implementaciju DMARC, SPF i DKIM.                            | Filip Novak |
-| **Simulated Environment Lead**      | Postavlja i održava simulirano e-mail okruženje.                  | Marko Mencl  |
-| **Attack and Reporting Lead**       | Dizajnira spoofing/phishing napade i upravlja DMARC izvještajima. | Ennio David Komljenović |
-| **Analysis and Documentation Lead** | Analizira rezultate i izrađuje dokumentaciju.                     | Paula Zadravec |
+Zadaci:
+- Implementacija i konfiguracija DMARC, SPF i DKIM zapisa
+- Postavljanje i održavanje simuliranog e-mail okruženja
+- Dizajniranje spoofing i phishing napada te upravljanje DMARC izvještajima
+- Analiza dobivenih rezultata i izrada dokumentacije
 
-## **4. Preduvjeti**
+
+## **3. Preduvjeti**
 - Osnovno znanje e-mail protokola i DNS-a.
 - Razumijevanje e-mail sigurnosti i napada (npr. spoofing, phishing).
 
-## **5. Alati**
+## **4. Alati**
 - **Postfix / Dovecot** – MTA i IMAP/POP3 server.
 - **OpenDKIM** – DKIM implementacija.
 - **VirtualBox / VMware** – Virtualizacija.
 - **Python** – Skripte za simulaciju napada.
 - **dmarcian** – Analiza i provjera DMARC zapisa i izvještaja.
 
-## **6. Isporuke (Deliverables)**
+## **5. Isporuke (Deliverables)**
 - Konfigurirano email okruženje (DMARC, SPF, DKIM).
 - Python skripte za napade.
 - DMARC izvještaji prije i poslije optimizacije.
 - Završni pisani izvještaj.
 - Prezentacija (slajdovi).
 
-## **7. Etička i pravna razmatranja**
+## **6. Etička i pravna razmatranja**
 - Svi napadi moraju biti izvedeni **isključivo** u izoliranom, virtualnom okruženju.
 - Poštivanje **etičkih smjernica** i **zakonskih ograničenja** u svakom trenutku.
 - Nikada ne koristiti stvarne domene ili produkcijske sustave bez dozvole.
